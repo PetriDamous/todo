@@ -2,13 +2,14 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: process.env.MODE,
+  mode: process.env.MODE || "development",
   entry: "./src/app.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "public/scripts"),
+    publicPath: "/scripts/",
     clean: true,
-    hashFunction: "sha256", // Use a supported hash function
+    hashFunction: "sha256",
   },
   devServer: {
     static: {
@@ -16,7 +17,7 @@ module.exports = {
     },
     port: 3000,
     compress: true,
-    open: false,
+    open: true,
     hot: true,
   },
   module: {
@@ -29,10 +30,5 @@ module.exports = {
     ],
   },
   devtool: "source-map",
-  plugins: [
-    new CleanWebpackPlugin(), // Clean the output directory before each build
-  ],
+  plugins: [new CleanWebpackPlugin()],
 };
-
-// Enable legacy OpenSSL provider
-process.env.NODE_OPTIONS = "--openssl-legacy-provider";
