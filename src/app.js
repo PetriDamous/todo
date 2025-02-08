@@ -36,10 +36,10 @@ document.querySelector("#notes-area").addEventListener("click", (e) => {
 
     console.log("start", closetColorBtn);
 
-    closetColorBtn = elm.closest(".card");
-    console.log(closetColorBtn);
-    console.log("not open", closetColorBtn);
-    uI.openColor(closetColorBtn);
+    // closetColorBtn = elm.closest(".card");
+    // console.log(closetColorBtn);
+    // console.log("not open", closetColorBtn);
+    // uI.openColor(closetColorBtn);
 
     // if (closetColorBtn === closetColorBtn) {
     //     console.log("opened", closetColorBtn)
@@ -128,11 +128,11 @@ document.querySelector(".modal").addEventListener("click", (e) => {
   }
 });
 
-window.addEventListener("resize", () => {
-  getColorCoords(closetColorBtn);
-});
+// window.addEventListener("resize", () => {
+//   getColorCoords(closetColorBtn);
+// });
 
-document.addEventListener("scroll", () => {
-  // getColorCoords(closetColorBtn);
-  uI.closeColor();
-});
+// document.addEventListener("scroll", () => {
+//   getColorCoords(closetColorBtn);
+//   uI.closeColor();
+// });
