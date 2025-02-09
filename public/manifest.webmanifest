@@ -1,0 +1,15 @@
+{
+  "name": "Todo",
+  "short_name": "TD",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "icons/todo.svg",
+      "sizes": "any"
+    }
+  ],
+  "display": "standalone",
+  "description": "Simple todo list app using vanilla web technologies.",
+  "background_color": "#434956",
+  "theme_color": "#a9afbc"
+}
