@@ -36,7 +36,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
-        // { from: "src/service-worker.js", to: "../service-worker.js" },
+        { from: "src/sw.js", to: "../sw.js" },
         { from: "src/manifest.webmanifest", to: "../manifest.webmanifest" },
       ],
     }),
