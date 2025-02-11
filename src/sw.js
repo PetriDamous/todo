@@ -15,44 +15,49 @@ const APP_STATIC_RESOURCES = [
 // Event Listners
 self.addEventListener("install", installApp);
 
-self.addEventListener("activate", (e) => {
-  e.waitUntil(async () => {
-    const names = await caches.keys();
+self.addEventListener("activate", activateApp);
 
-    await Promise.all(
-      names.map((name) => {
-        if (name !== CACHE_NAME) {
-          return caches.delete(name);
-        }
-      })
-    );
+self.addEventListener("fetch", handleFetch);
 
-    await clients.claim();
-  })();
-});
+// Core Functions
+function activateApp(e) {
+  e.waitUntil(deleteOldCache());
+}
 
-self.addEventListener("fetch", (e) => {
+async function deleteOldCache() {
+  const names = await caches.keys();
+
+  const namesPromises = names.map((name) => {
+    if (name !== CACHE_NAME) {
+      return caches.delete(name);
+    }
+  });
+
+  await Promise.all(namesPromises);
+  await clients.claim();
+}
+
+function handleFetch(e) {
   if (e.request.mode === "navigate") {
     e.respondWith(caches.match("/"));
     return;
   }
 
-  e.respondWith(
-    (async () => {
-      const cache = await caches.open(CACHE_NAME);
+  e.respondWith(cacheResponse(e));
+}
 
-      const cachedResponse = await cache.match(e.request.url);
+async function cacheResponse(e) {
+  const cache = await caches.open(CACHE_NAME);
 
-      if (cachedResponse) {
-        return cachedResponse;
-      }
+  const cachedResponse = await cache.match(e.request.url);
 
-      return new Response(null, { status: 404 });
-    })()
-  );
-});
+  if (cachedResponse) {
+    return cachedResponse;
+  }
 
-// Core Functions
+  return new Response(null, { status: 404 });
+}
+
 function installApp(e) {
   e.waitUntil(initialCacheSetup());
 }
