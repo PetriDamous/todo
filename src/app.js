@@ -5,19 +5,15 @@ import { noteValidation, getColorCoords } from "./js/utilis/utilis";
 
 // Service worker setup
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js") // Update the path if necessary
-      .then((registration) => {
-        console.log(
-          "Service Worker registered with scope:",
-          registration.scope
-        );
-      })
-      .catch((error) => {
-        console.error("Service Worker registration failed:", error);
-      });
+  window.addEventListener("load", async () => {
+    try {
+      navigator.serviceWorker.register("/sw.js");
+    } catch (e) {
+      console.error("Service Worker registration failed:", error);
+    }
   });
+} else {
+  console.error("Service workers are not supported.");
 }
 
 // Application code
