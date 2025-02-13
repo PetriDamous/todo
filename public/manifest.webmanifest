@@ -8,6 +8,7 @@
       "sizes": "any"
     }
   ],
+  "display_override": ["window-controls-overlay"],
   "display": "minimal-ui",
   "description": "Simple todo list app using vanilla web technologies.",
   "background_color": "#434956",
