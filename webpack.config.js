@@ -1,5 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: process.env.MODE || "development",
@@ -30,5 +32,17 @@ module.exports = {
     ],
   },
   devtool: "source-map",
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/sw.js", to: "../sw.js" },
+        { from: "src/manifest.webmanifest", to: "../manifest.webmanifest" },
+      ],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      filename: "../index.html",
+    }),
+  ],
 };

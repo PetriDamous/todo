@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="icon" href="./icons/todo.svg" />
+    <link
+      rel="manifest"
+      href="./manifest.webmanifest"
+      type="application/manifest+json"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="scripts/bundle.js" defer></script>
+    <title>Todo</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <img src="img/shiba.png" alt="" class="logo" />
+        <h1 class="site-title">Todo</h1>
+      </div>
+    </header>
+
+    <div class="container status-message">
+      <p id="message">placeholder</p>
+    </div>
+
+    <form id="form-main" class="form" autocomplete="off">
+      <div class="container">
+        <input id="title" type="text" placeholder="Title" />
+        <input id="body" type="text" placeholder="Take a note..." required />
+        <div id="form-buttons-main" class="form__buttons m-sm-space">
+          <button id="submit-main" class="btn" type="submit">Submit</button>
+          <button id="close-main" class="btn">Close</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="notes-area" class="notes container"></div>
+
+    <div class="modal" data-id="">
+      <form id="form-modal" class="form" autocomplete="off">
+        <div class="container">
+          <input id="title" type="text" placeholder="Title" />
+          <input id="body" type="text" placeholder="Take a note..." />
+          <div class="form__buttons m-sm-space">
+            <button id="submit-modal" class="btn" type="submit">Submit</button>
+            <button id="close-modal" class="btn">Close</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="color-tooltip">
+      <div class="color-tooltip__option" id="default"></div>
+      <div class="color-tooltip__option" id="red"></div>
+      <div class="color-tooltip__option" id="orange"></div>
+      <div class="color-tooltip__option" id="yellow"></div>
+      <div class="color-tooltip__option" id="green"></div>
+      <div class="color-tooltip__option" id="teal"></div>
+      <div class="color-tooltip__option" id="blue"></div>
+      <div class="color-tooltip__option" id="purple"></div>
+      <div class="color-tooltip__option" id="pink"></div>
+      <div class="color-tooltip__option" id="brown"></div>
+    </div>
+  </body>
+</html>

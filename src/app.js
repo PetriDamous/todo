@@ -3,6 +3,20 @@ import UI from "./js/uI";
 import Storage from "./js/storage";
 import { noteValidation, getColorCoords } from "./js/utilis/utilis";
 
+// Service worker setup
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", async () => {
+    try {
+      navigator.serviceWorker.register("/sw.js");
+    } catch (e) {
+      console.error("Service Worker registration failed:", error);
+    }
+  });
+} else {
+  console.error("Service workers are not supported.");
+}
+
+// Application code
 const uI = new UI();
 
 // Keep track of closet color button
