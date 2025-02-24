@@ -1,4 +1,4 @@
-const VERSION = "v1.5";
+const VERSION = "v1";
 const CACHE_NAME = `todo-cache-${VERSION}`;
 
 const APP_STATIC_RESOURCES = [

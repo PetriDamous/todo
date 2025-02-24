@@ -1,5 +1,5 @@
 import Notes from "./js/notes";
-import UI from "./js/uI";
+import UI from "./js/ui";
 import Storage from "./js/storage";
 import { noteValidation, getColorCoords } from "./js/utilis/utilis";
 
