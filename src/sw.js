@@ -2,14 +2,14 @@ const VERSION = "v1";
 const CACHE_NAME = `todo-cache-${VERSION}`;
 
 const APP_STATIC_RESOURCES = [
-  "/",
-  "/index.html",
-  "/scripts/bundle.js",
-  "/css/styles.css",
-  "/icons/todo.svg",
-  "/img/chromatic.png",
-  "/img/shiba.png",
-  "/manifest.webmanifest",
+  "./",
+  "./index.html",
+  "./scripts/bundle.js",
+  "./css/styles.css",
+  "./icons/todo.svg",
+  "./img/chromatic.png",
+  "./img/shiba.png",
+  "./manifest.webmanifest",
 ];
 
 // Event Listners
