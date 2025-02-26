@@ -38,6 +38,8 @@ module.exports = {
       patterns: [
         { from: "src/sw.js", to: "../sw.js" },
         { from: "src/manifest.webmanifest", to: "../manifest.webmanifest" },
+        { from: "src/icons", to: "../icons" },
+        { from: "src/img", to: "../img" },
       ],
     }),
     new HtmlWebpackPlugin({
