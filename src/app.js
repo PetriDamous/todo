@@ -9,6 +9,7 @@ if ("serviceWorker" in navigator) {
     try {
       navigator.serviceWorker.register("/sw.js");
     } catch (e) {
+      console.log("service not working well right?");
       console.error("Service Worker registration failed:", error);
     }
   });
