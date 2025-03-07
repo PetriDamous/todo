@@ -1,12 +1,12 @@
-name: Deploy to GitHub Pages
+name: Deploy to Surge
 
 on:
   push:
     branches:
-      - main # Change this to your default branch
+      - main # Adjust to your default branch
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,8 +24,7 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+      - name: Deploy to Surge
+        run: |
+          npm install --global surge
+          surge ./public my-todo-app.surge.sh --token ${{ secrets.SURGE_TOKEN }}

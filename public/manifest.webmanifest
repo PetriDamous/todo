@@ -1,7 +1,7 @@
 {
   "name": "Todo",
   "short_name": "TD",
-  "start_url": "/todo",
+  "start_url": "/",
   "icons": [
     {
       "src": "icons/todo.svg",

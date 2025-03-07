@@ -7,7 +7,7 @@ import { noteValidation, getColorCoords } from "./js/utilis/utilis";
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      navigator.serviceWorker.register("/todo/sw.js");
+      navigator.serviceWorker.register("/sw.js");
     } catch (e) {
       console.log("service not working well right?");
       console.error("Service Worker registration failed:", error);
