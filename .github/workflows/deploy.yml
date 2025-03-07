@@ -27,4 +27,4 @@ jobs:
       - name: Deploy to Surge
         run: |
           npm install --global surge
-          surge ./public my-todo-app.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+          surge ./public todo-enterprise.surge.sh --token ${{ secrets.SURGE_TOKEN }}
