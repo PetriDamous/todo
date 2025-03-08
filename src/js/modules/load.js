@@ -1,4 +1,4 @@
-import UI from "../classes/Ui";
+import UI from "../classes/UserInterface";
 
 export const domContentLoaded = () => {
   const uI = new UI();

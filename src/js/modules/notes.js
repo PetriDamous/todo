@@ -1,4 +1,4 @@
-import UI from "../classes/Ui";
+import UI from "../classes/UserInterface";
 import Storage from "../classes/Storage";
 import { $colorToolTip } from "./elements";
 
