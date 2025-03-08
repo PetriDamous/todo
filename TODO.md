@@ -24,3 +24,7 @@
 - Make title and note be required before submitting
 - Consider adding an animation for when the note input opens
 - Fix nav bar in web its to damn fat
+- Make notes area a textarea
+  - Add character limit
+  - show character limit in corner with it counting up when user adds characters
+    - ex: 52/120
