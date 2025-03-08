@@ -1,5 +1,26 @@
 ## Tasks
 
 - Create badge notification that displays the number todos a user has.
-- Whenver a new new todo is added send a notfication through push notification.
-  - when the user clicks on the notification it should just open the app.
+- Create time stamp for when todo is created
+- Add reminder date feature
+  - Have reminder send push notification
+- Finish color select option
+  - Have model open when color icon is clicked
+  - when user hovers over color icon to select have animation where color button slightly grows bigger than rest.
+- Create a list of options that live in the upper right hand corner of app under 3 dots you see in mobile apps
+  - Consider using font-awsome for icons
+  - Move create todo inputs into options list
+    - When create option is selected from list have modal pop up with create inputs
+  - Trash can option that carries deleted todo
+    - Delete todos every 7 days
+  - Add sort by date created and due date
+  - Add search that only displays todos that are close to matching
+    - Search bar should come out in UI nav bar when option is clicked
+    - Animate the search bar coming in
+- Try to make code more modular
+- Move off of local storage and try to use indexDB to hold more notes
+- When app is not installed have nav bar like it is
+- When app is installed remove nav bar and have it against
+- Make title and note be required before submitting
+- Consider adding an animation for when the note input opens
+- Fix nav bar in web its to damn fat
