@@ -1,5 +1,5 @@
-import Storage from "./storage";
-import { getColorCoords } from "./utilis/utilis";
+import Storage from "./Storage";
+import { getColorCoords } from "../utilis/utilis";
 class UI {
   constructor() {
     this.$notesArea = document.querySelector("#notes-area");
