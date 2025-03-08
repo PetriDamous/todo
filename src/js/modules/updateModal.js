@@ -1,4 +1,4 @@
-import UI from "../classes/ui";
+import UI from "../classes/Ui";
 import Storage from "../classes/Storage";
 
 export const updateModal = () => {

@@ -1,7 +1,7 @@
 import Notes from "../classes/Notes";
 import { $title, $body } from "./elements";
 import { noteValidation } from "../utilis/utilis";
-import UI from "../classes/ui";
+import UI from "../classes/Ui";
 import Storage from "../classes/Storage";
 
 export const createNotesInput = () => {
