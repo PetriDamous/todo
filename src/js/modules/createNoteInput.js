@@ -8,15 +8,6 @@ export const createNotesInput = () => {
   const uI = new UI();
 
   document.querySelector("#form-main").addEventListener("click", (e) => {
-    if (e.target.id === "body") {
-      uI.openForm();
-    }
-
-    if (e.target.id === "close-main") {
-      e.preventDefault();
-      uI.closeForm();
-    }
-
     if (e.target.id === "submit-main") {
       e.preventDefault();
 

@@ -4,7 +4,7 @@ import { notes } from "./js/modules/notes";
 import { createNotesInput } from "./js/modules/createNoteInput";
 import { updateModal } from "./js/modules/updateModal";
 
-setupServiceWorker();
+// setupServiceWorker();
 
 // Keep track of closet color button
 let closetColorBtn;

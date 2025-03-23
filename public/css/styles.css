@@ -229,6 +229,13 @@ h3 {
   color: var(--clr-neutral-100);
   outline: none;
 }
+.form .container textarea {
+  max-width: 50rem;
+  width: 100%;
+  padding: 0.5em;
+  background-color: transparent;
+  color: var(--clr-neutral-100);
+}
 .form .container:hover, .form .container:focus {
   box-shadow: 0 1px 2px 0 rgb(244, 245, 247), 0 1px 3px 1px rgb(225, 242, 255);
 }
@@ -237,13 +244,6 @@ h3 {
 }
 .form__buttons > * + * {
   margin-left: 0.5rem;
-}
-
-#form-main #title {
-  display: none;
-}
-#form-main #form-buttons-main {
-  display: none;
 }
 
 .logo {
