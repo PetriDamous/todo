@@ -235,6 +235,8 @@ h3 {
   padding: 0.5em;
   background-color: transparent;
   color: var(--clr-neutral-100);
+  resize: none;
+  height: 5rem;
 }
 .form .container:hover, .form .container:focus {
   box-shadow: 0 1px 2px 0 rgb(244, 245, 247), 0 1px 3px 1px rgb(225, 242, 255);
@@ -265,6 +267,14 @@ h3 {
 }
 .card:hover, .card:focus {
   box-shadow: 0 1px 2px 0 rgb(244, 245, 247), 0 1px 3px 1px rgb(225, 242, 255);
+}
+.card__title {
+  border-bottom: 1px solid var(--clr-primary-400);
+  padding-bottom: 1rem;
+}
+.card__body {
+  height: 4rem;
+  overflow: hidden;
 }
 .card__title, .card__body {
   white-space: pre-wrap;
