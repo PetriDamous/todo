@@ -1,10 +1,16 @@
 import { setupServiceWorker } from "./js/modules/servicesWorker";
 import { domContentLoaded } from "./js/modules/load";
 import { notes } from "./js/modules/notes";
-import { createNotesInput } from "./js/modules/createNoteInput";
 import { updateModal } from "./js/modules/updateModal";
+import UI from "./js/classes/UserInterface";
+import CreateNotes from "./js/classes/CreateNotes";
 
 // setupServiceWorker();
+
+const uI = new UI();
+
+const createNotes = new CreateNotes(uI);
+createNotes.createNoteAction();
 
 // Keep track of closet color button
 let closetColorBtn;
@@ -13,7 +19,7 @@ domContentLoaded();
 
 notes(closetColorBtn);
 
-createNotesInput();
+// createNotesInput();
 
 updateModal();
 
