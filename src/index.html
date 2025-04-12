@@ -21,9 +21,19 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="container">
-        <img src="img/shiba.png" alt="" class="logo" />
-        <h1 class="site-title">Todo</h1>
+      <div class="site-header__container">
+        <div class="site-header__container-left">
+          <img src="img/shiba.png" alt="" class="logo" />
+          <span class="site-title">Todo Keep</span>
+        </div>
+        <div class="site-header__container-right">
+          <div class="dropdown">
+            <span id="site-header-dropdown-button" class="dropdown__button">&#8942</span>
+            <ul id="site-header-dropdown-menu" class="dropdown__menu">
+              <li><a href="#" title="Create note">+ Create Note</a></li>
+            </ul>
+          </div>          
+        </div>            
       </div>
     </header>
 
