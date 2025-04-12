@@ -4,10 +4,22 @@ import { notes } from "./js/modules/notes";
 import { updateModal } from "./js/modules/updateModal";
 import UI from "./js/classes/UserInterface";
 import CreateNotes from "./js/classes/CreateNotes";
+import Dropdown from "./js/classes/Dropdown";
+import {
+  $siteHeaderDropdownButton,
+  $siteHeaderDropdownMenu,
+} from "./js/modules/elements";
 
 // setupServiceWorker();
 
 const uI = new UI();
+
+const siteHeaderDropdown = new Dropdown({
+  dropdownButton: $siteHeaderDropdownButton,
+  dropdownMenu: $siteHeaderDropdownMenu,
+});
+
+siteHeaderDropdown.onBtnClick();
 
 const createNotes = new CreateNotes(uI);
 createNotes.createNoteAction();
