@@ -1,0 +1,9 @@
+.close {
+  font-size: 2rem;
+  font-weight: var(--fw-700);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--clr-neutral-300);
+  }
+}

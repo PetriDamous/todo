@@ -2,6 +2,13 @@
   --container-max: 100%;
   --container-w: 100%;
 
+  @include respond($breakpoint: 56.25em, $breakpoint-type: max) {
+    --container-right-p: 0;
+    --container-left-p: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   z-index: 2;
   background-color: var(--modal-bg);
   // transform: scale(0);
@@ -53,9 +60,15 @@
   &__buttons {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 
     & > * + * {
-      @include margins($left-m: 0.5rem);
+      @include margins($left-m: 1.5rem);
+    }
+
+    @include respond($breakpoint: 56.25em, $breakpoint-type: max) {
+      padding-right: 1rem;
+      padding-left: 1rem;
     }
   }
 }

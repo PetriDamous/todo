@@ -1,7 +1,13 @@
 // Media Query mixin
-@mixin respond($breakpoint) {
-  @media (min-width: $breakpoint) {
-    @content;
+@mixin respond($breakpoint, $breakpoint-type) {
+  @if $breakpoint-type == min {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if $breakpoint-type == max {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
   }
 }
 
@@ -125,7 +131,8 @@
   $gap: null,
   $top-space: 4rem,
   $left-space: 2.5rem,
-  $break-p: 40em
+  $break-p: 40em,
+  $break-type: min
 ) {
   display: flex;
   flex-direction: column;
@@ -142,7 +149,7 @@
     flex-basis: 100%;
   }
 
-  @include respond($break-p) {
+  @include respond($break-p, $break-type) {
     flex-direction: row;
 
     @if ($gap == null) {
