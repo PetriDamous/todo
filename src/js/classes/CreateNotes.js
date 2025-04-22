@@ -37,6 +37,7 @@ class CreateNotes {
         this.uI.clearForm($title, $body);
         this.uI.displayMsg("add", "success");
         this.uI.renderNotes();
+        this.createNoteForm.classList.remove("open-modal");
       } else {
         this.uI.displayMsg("validation", "danger");
       }
