@@ -8,7 +8,9 @@ import Dropdown from "./js/classes/Dropdown";
 import {
   $siteHeaderDropdownButton,
   $siteHeaderDropdownMenu,
+  $siteHeaderDropdownOptions,
 } from "./js/modules/elements";
+import { siteHeaderActions } from "./js/actions/siteHeaderActions";
 
 // setupServiceWorker();
 
@@ -17,12 +19,16 @@ const uI = new UI();
 const siteHeaderDropdown = new Dropdown({
   dropdownButton: $siteHeaderDropdownButton,
   dropdownMenu: $siteHeaderDropdownMenu,
+  dropdownOptions: $siteHeaderDropdownOptions,
+  dropDownActions: siteHeaderActions,
 });
 
 siteHeaderDropdown.onBtnClick();
+siteHeaderDropdown.addOptionsEventListeners();
 
 const createNotes = new CreateNotes(uI);
 createNotes.createNoteAction();
+createNotes.closeForm();
 
 // Keep track of closet color button
 let closetColorBtn;
