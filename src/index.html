@@ -56,19 +56,21 @@
     </form>
 
     <div id="notes-area" class="notes container"></div>
-
-    <div class="modal" data-id="">
-      <form id="form-modal" class="form" autocomplete="off">
-        <div class="container">
-          <input id="title" type="text" placeholder="Update title" />
-          <textarea id="body" type="text" placeholder="Update note..."></textarea>
-          <div class="form__buttons m-sm-space">
-            <button id="submit-modal" class="btn" type="submit">Submit</button>
-            <button id="close-modal" class="btn">Close</button>
-          </div>
+   
+    <form id="form-modal" class="form" data-id="" autocomplete="off">
+      <div class="container">
+        <div id="form-buttons-modal" class="form__buttons m-sm-space">
+          <button id="submit-modal" class="btn" type="submit">Update</button>
+          <span id="close-modal" class="close">X</span>
         </div>
-      </form>
-    </div>
+      <div class="form__title">
+        <input id="title" type="text" placeholder="Update title" />
+      </div>
+      <div class="form__body">
+        <textarea id="body" type="text" placeholder="Update note..."></textarea>
+      </div>       
+      </div>
+    </form>    
 
     <div class="color-tooltip">
       <div class="color-tooltip__option" id="default"></div>

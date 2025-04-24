@@ -7,9 +7,9 @@ class UI {
     this.$formTitle = document.querySelector("#form-main #title");
     this.$colorToolTip = document.querySelector(".color-tooltip");
 
-    this.$modal = document.querySelector(".modal");
-    this.$modelTitle = document.querySelector(".modal #title");
-    this.$modelBody = document.querySelector(".modal #body");
+    this.$modal = document.querySelector("#form-modal");
+    this.$modelTitle = document.querySelector("#form-modal #title");
+    this.$modelBody = document.querySelector("#form-modal #body");
   }
 
   renderNotes() {
