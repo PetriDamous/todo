@@ -1,8 +1,9 @@
 .form {
   --container-max: 100%;
   --container-w: 100%;
+  $breakpoint: 56.25em;
 
-  @include respond($breakpoint: 56.25em, $breakpoint-type: max) {
+  @include respond($breakpoint: $breakpoint, $breakpoint-type: max) {
     --container-right-p: 0;
     --container-left-p: 0;
     padding-right: 0;
@@ -27,6 +28,7 @@
 
     & input {
       padding: 0.5em;
+      padding-left: 1em;
       border: 0;
       background-color: transparent;
       border-radius: var(--br);
@@ -41,11 +43,15 @@
     & textarea {
       max-width: 100%;
       width: 100%;
-      padding: 0.5em;
+      padding: 1.5em;
       background-color: transparent;
       color: var(--clr-neutral-100);
       resize: none;
       min-height: 100%;
+    }
+
+    @include respond($breakpoint: $breakpoint, $breakpoint-type: max) {
+      height: 100vh;
     }
   }
 

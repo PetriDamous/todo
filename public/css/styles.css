@@ -240,6 +240,7 @@ h3 {
 }
 .form__title input {
   padding: 0.5em;
+  padding-left: 1em;
   border: 0;
   background-color: transparent;
   border-radius: var(--br);
@@ -253,11 +254,16 @@ h3 {
 .form__body textarea {
   max-width: 100%;
   width: 100%;
-  padding: 0.5em;
+  padding: 1.5em;
   background-color: transparent;
   color: var(--clr-neutral-100);
   resize: none;
   min-height: 100%;
+}
+@media (max-width: 56.25em) {
+  .form__body {
+    height: 100vh;
+  }
 }
 .form:hover, .form:focus {
   box-shadow: 0 1px 2px 0 rgb(244, 245, 247), 0 1px 3px 1px rgb(225, 242, 255);
