@@ -15,8 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="scripts/bundle.js" defer></script>
+    <script type="module" src="/src/app.js"></script>    
     <title>Todo</title>
   </head>
   <body>
@@ -28,7 +27,7 @@
         </div>
         <div class="site-header__container-right">
           <div class="dropdown">
-            <span id="site-header-dropdown-button" class="dropdown__button">&#8942</span>
+            <span id="site-header-dropdown-button" class="dropdown__button">&#8942;</span>
             <ul id="site-header-dropdown-menu" class="dropdown__menu hide">
               <li><a  href="#" title="Create note">+ Create Note</a></li>
             </ul>
@@ -48,10 +47,10 @@
           <span class="close">X</span>
         </div>
         <div class="form__title">
-          <input id="title" type="text" placeholder="Title" />
+          <input id="form-main-title" type="text" placeholder="Title" />
         </div>
         <div class="form__body">
-          <textarea id="body" class="m-sm-space"" placeholder="Take a note..." required></textarea>                 
+          <textarea id="form-main-body" class="m-sm-space" placeholder="Take a note..." required></textarea>                 
       </div>
     </form>
 
@@ -64,10 +63,10 @@
           <span id="close-modal" class="close">X</span>
         </div>
       <div class="form__title">
-        <input id="title" type="text" placeholder="Update title" />
+        <input id="form-modal-title" type="text" placeholder="Update title" />
       </div>
       <div class="form__body">
-        <textarea id="body" type="text" placeholder="Update note..."></textarea>
+        <textarea id="form-modal-body" type="text" placeholder="Update note..."></textarea>
       </div>       
       </div>
     </form>    
@@ -83,6 +82,6 @@
       <div class="color-tooltip__option" id="purple"></div>
       <div class="color-tooltip__option" id="pink"></div>
       <div class="color-tooltip__option" id="brown"></div>
-    </div>
+    </div>    
   </body>
 </html>
