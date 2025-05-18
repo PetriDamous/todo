@@ -1,3 +1,4 @@
+import "./sass/style.scss";
 import { setupServiceWorker } from "./js/modules/servicesWorker";
 import { domContentLoaded } from "./js/modules/load";
 import { notes } from "./js/modules/notes";

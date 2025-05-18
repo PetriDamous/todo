@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" src="/src/app.js"></script>    
+    <script type="module" src="/src/app.js"></script>
     <title>Todo</title>
   </head>
   <body>
@@ -27,12 +27,14 @@
         </div>
         <div class="site-header__container-right">
           <div class="dropdown">
-            <span id="site-header-dropdown-button" class="dropdown__button">&#8942;</span>
+            <span id="site-header-dropdown-button" class="dropdown__button"
+              >&#8942;</span
+            >
             <ul id="site-header-dropdown-menu" class="dropdown__menu hide">
-              <li><a  href="#" title="Create note">+ Create Note</a></li>
+              <li><a href="#" title="Create note">+ Create Note</a></li>
             </ul>
-          </div>          
-        </div>            
+          </div>
+        </div>
       </div>
     </header>
 
@@ -50,26 +52,36 @@
           <input id="form-main-title" type="text" placeholder="Title" />
         </div>
         <div class="form__body">
-          <textarea id="form-main-body" class="m-sm-space" placeholder="Take a note..." required></textarea>                 
+          <textarea
+            id="form-main-body"
+            class="m-sm-space"
+            placeholder="Take a note..."
+            required
+          ></textarea>
+        </div>
       </div>
     </form>
 
-    <div id="notes-area" class="notes container"></div>
-   
     <form id="form-modal" class="form" data-id="" autocomplete="off">
       <div class="container">
         <div id="form-buttons-modal" class="form__buttons m-sm-space">
           <button id="submit-modal" class="btn" type="submit">Update</button>
           <span id="close-modal" class="close">X</span>
         </div>
-      <div class="form__title">
-        <input id="form-modal-title" type="text" placeholder="Update title" />
+        <div class="form__title">
+          <input id="form-modal-title" type="text" placeholder="Update title" />
+        </div>
+        <div class="form__body">
+          <textarea
+            id="form-modal-body"
+            type="text"
+            placeholder="Update note..."
+          ></textarea>
+        </div>
       </div>
-      <div class="form__body">
-        <textarea id="form-modal-body" type="text" placeholder="Update note..."></textarea>
-      </div>       
-      </div>
-    </form>    
+    </form>
+
+    <div id="notes-area" class="notes container"></div>
 
     <div class="color-tooltip">
       <div class="color-tooltip__option" id="default"></div>
@@ -82,6 +94,6 @@
       <div class="color-tooltip__option" id="purple"></div>
       <div class="color-tooltip__option" id="pink"></div>
       <div class="color-tooltip__option" id="brown"></div>
-    </div>    
+    </div>
   </body>
 </html>
