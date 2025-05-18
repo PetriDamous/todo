@@ -4,7 +4,7 @@ import Storage from "../classes/Storage";
 export const updateModal = () => {
   const uI = new UI();
 
-  document.querySelector(".modal").addEventListener("click", (e) => {
+  document.querySelector("#form-modal").addEventListener("click", (e) => {
     if (e.target.id === "close-modal") {
       e.preventDefault();
       uI.closeModal();

@@ -5,12 +5,11 @@ class UI {
     this.$notesArea = document.querySelector("#notes-area");
     this.$msg = document.querySelector("#message");
     this.$formTitle = document.querySelector("#form-main #title");
-    this.$formBtns = document.querySelector("#form-buttons-main");
     this.$colorToolTip = document.querySelector(".color-tooltip");
 
-    this.$modal = document.querySelector(".modal");
-    this.$modelTitle = document.querySelector(".modal #title");
-    this.$modelBody = document.querySelector(".modal #body");
+    this.$modal = document.querySelector("#form-modal");
+    this.$modelTitle = document.querySelector("#form-modal #title");
+    this.$modelBody = document.querySelector("#form-modal #body");
   }
 
   renderNotes() {
@@ -59,27 +58,16 @@ class UI {
       this.$msg.classList.add("theme-success");
     }
 
-    this.$msg.style.visibility = "visible";
+    this.$msg.style.display = "block";
 
     setTimeout(() => {
-      this.$msg.style.visibility = "hidden";
+      this.$msg.style.display = "none";
     }, 3000);
   }
 
   clearForm(title, body) {
     title.value = "";
     body.value = "";
-  }
-
-  openForm() {
-    this.closeColor();
-    this.$formTitle.style.display = "block";
-    this.$formBtns.style.display = "block";
-  }
-
-  closeForm() {
-    this.$formTitle.style.display = "none";
-    this.$formBtns.style.display = "none";
   }
 
   openColor(closetColorBtn) {

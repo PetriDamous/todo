@@ -1,13 +1,29 @@
-.site-header {    
-    background-color: var(--clr-neutral-900);
+.site-header {
+  background-color: var(--clr-neutral-900);
 
-    .container {
-        display: flex;
-        align-items: center;
-        @include margins($left-m: 0, $right-m: 0);
+  @include padding($top-p: 1rem, $bottom-p: 1rem);
 
-        & > * + *  {
-            @include margins($left-m: 2rem);
-        }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include margins($left-m: 1.5rem, $right-m: 1.5rem);
+
+    &-left {
+      display: flex;
+      align-items: center;
+      & > * + * {
+        @include margins($left-m: 1rem);
+      }
     }
+  }
+
+  .site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  & .dropdown {
+    --dropdown-left: -110px;
+  }
 }

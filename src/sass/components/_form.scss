@@ -1,50 +1,77 @@
-.form {    
-    --container-max: 40rem;
+.form {
+  --container-max: 100%;
+  --container-w: 100%;
+  $breakpoint: 56.25em;
 
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 1em;
-        border: 1px solid var(--clr-neutral-200);
-        border-radius: var(--br);
-        transition-duration: 0.218s;
-        transition-property:  box-shadow;
-        transition-timing-function: ease-in;
+  @include respond($breakpoint: $breakpoint, $breakpoint-type: max) {
+    --container-right-p: 0;
+    --container-left-p: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
 
-        & input {
-            max-width: 50rem;
-            width: 100%;
-            padding: .5em;
-            border: 0;
-            background-color: transparent;
-            border-radius: var(--br);
-            color: var(--clr-neutral-100);
-            outline: none;
-        }
-    
-        &:hover,
-        &:focus {   
-            box-shadow: 0 1px 2px 0 rgb(244, 245, 247), 0 1px 3px 1px rgb(225, 242, 255);
-        }
+  z-index: 2;
+  background-color: var(--modal-bg);
+  transform: scale(0);
+  @include position($position: fixed, $top: 0, $right: 0);
+  transition: 250ms;
+
+  padding: 1em;
+  border: 1px solid var(--clr-neutral-200);
+  border-radius: var(--br);
+  background-color: var(--modal-form-bg);
+  width: 100%;
+  min-height: 100%;
+
+  &__title {
+    font-size: 1.5rem;
+
+    & input {
+      padding: 0.5em;
+      padding-left: 1em;
+      border: 0;
+      background-color: transparent;
+      border-radius: var(--br);
+      color: var(--clr-neutral-100);
+      outline: none;
+      width: 100%;
+    }
+  }
+
+  &__body {
+    height: 80vh;
+    & textarea {
+      max-width: 100%;
+      width: 100%;
+      padding: 1.5em;
+      background-color: transparent;
+      color: var(--clr-neutral-100);
+      resize: none;
+      min-height: 100%;
     }
 
-    &__buttons {
-        align-self: flex-end;
-        
-        & > * + * {
-            @include margins($left-m: .5rem);
-        }
+    @include respond($breakpoint: $breakpoint, $breakpoint-type: max) {
+      height: 100vh;
     }
-}
+  }
 
-#form-main {
-    #title {
-        display: none;
+  &:hover,
+  &:focus {
+    box-shadow: 0 1px 2px 0 rgb(244, 245, 247), 0 1px 3px 1px rgb(225, 242, 255);
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    & > * + * {
+      @include margins($left-m: 1.5rem);
     }
 
-    #form-buttons-main {
-        display: none;
+    @include respond($breakpoint: 56.25em, $breakpoint-type: max) {
+      padding-right: 1rem;
+      padding-left: 1rem;
     }
+  }
 }
