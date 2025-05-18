@@ -58,10 +58,10 @@ class UI {
       this.$msg.classList.add("theme-success");
     }
 
-    this.$msg.style.visibility = "visible";
+    this.$msg.style.display = "block";
 
     setTimeout(() => {
-      this.$msg.style.visibility = "hidden";
+      this.$msg.style.display = "none";
     }, 3000);
   }
 
