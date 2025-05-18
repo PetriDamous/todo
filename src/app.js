@@ -12,7 +12,7 @@ import {
 } from "./js/modules/elements";
 import { siteHeaderActions } from "./js/actions/siteHeaderActions";
 
-// setupServiceWorker();
+setupServiceWorker();
 
 const uI = new UI();
 
