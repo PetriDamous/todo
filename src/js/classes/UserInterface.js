@@ -1,5 +1,10 @@
 import Storage from "./Storage";
 import { getColorCoords } from "../utilis/utilis";
+import {
+  $formModal,
+  $formModalBody,
+  $formModalTitle,
+} from "../modules/elements";
 class UI {
   constructor() {
     this.$notesArea = document.querySelector("#notes-area");
@@ -7,9 +12,9 @@ class UI {
     this.$formTitle = document.querySelector("#form-main #title");
     this.$colorToolTip = document.querySelector(".color-tooltip");
 
-    this.$modal = document.querySelector("#form-modal");
-    this.$modelTitle = document.querySelector("#form-modal #title");
-    this.$modelBody = document.querySelector("#form-modal #body");
+    this.$modal = $formModal;
+    this.$modelTitle = $formModalTitle;
+    this.$modelBody = $formModalBody;
   }
 
   renderNotes() {

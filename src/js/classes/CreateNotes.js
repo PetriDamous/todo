@@ -1,6 +1,6 @@
 import {
-  $title,
-  $body,
+  $formMainTitle,
+  $formMainBody,
   $createNoteForm,
   $creatNotesCloseBtn,
 } from "../modules/elements";
@@ -10,8 +10,8 @@ import Storage from "./Storage";
 
 class CreateNotes {
   constructor(uI) {
-    this.$title = $title;
-    this.$body = $body;
+    this.$formMainTitle = $formMainTitle;
+    this.$formMainBody = $formMainBody;
     this.createNoteForm = $createNoteForm;
     this.close = $creatNotesCloseBtn;
     this.uI = uI;
@@ -31,10 +31,10 @@ class CreateNotes {
     if (e.target.id === "submit-main") {
       e.preventDefault();
 
-      if (noteValidation($body.value)) {
-        const note = new Notes($title.value, $body.value);
+      if (noteValidation($formMainBody.value)) {
+        const note = new Notes($formMainTitle.value, $formMainBody.value);
         Storage.addNote(note);
-        this.uI.clearForm($title, $body);
+        this.uI.clearForm($formMainTitle, $formMainBody);
         this.uI.displayMsg("add", "success");
         this.uI.renderNotes();
         this.createNoteForm.classList.remove("open-modal");

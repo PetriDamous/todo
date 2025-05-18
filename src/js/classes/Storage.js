@@ -1,3 +1,5 @@
+import { $formModalTitle, $formModalBody } from "../modules/elements.js";
+
 class Storage {
   static getNotes() {
     const notes = JSON.parse(localStorage.getItem("notes"));
@@ -24,8 +26,8 @@ class Storage {
   static updateNote(id) {
     let notes = this.getNotes();
 
-    const modelTitle = document.querySelector("#form-modal #title").value;
-    const modelBody = document.querySelector("#form-modal #body").value;
+    const modelTitle = $formModalTitle.value;
+    const modelBody = $formModalBody.value;
 
     notes = notes.reduce((acc, curr) => {
       if (curr.id === id) {
