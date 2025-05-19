@@ -1,3 +1,4 @@
+import chromatic from "../../assets/chromatic.png";
 import Storage from "./Storage";
 import { getColorCoords } from "../utilis/utilis";
 import {
@@ -30,7 +31,7 @@ class UI {
                 <div class="card__body">${note.body}</div>
                 <div class="card__options">
                     <div class="card__color">
-                        <img src="img/chromatic.png" alt="color picker">
+                        <img src=${chromatic} alt="color picker">
                     </div>
                     <button class="btn btn-delete">Delete</button>
                 </div>
