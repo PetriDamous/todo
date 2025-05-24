@@ -1,32 +1,22 @@
 {
-  "name": "boilerplate",
+  "name": "todo-keep",
   "version": "1.0.0",
   "description": "",
-  "main": "input.js",
+  "type": "module",
+  "private": true,
   "scripts": {
-    "start": "concurrently \"sass src/sass/main.scss public/css/styles.css --watch\" \"cross-env MODE=development webpack serve --live-reload\"",
-    "watch": "webpack --watch",
-    "build": "concurrently \"sass src/sass/main.scss public/css/styles.css\" \"cross-env MODE=production webpack\""
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.26.7",
-    "@babel/preset-env": "^7.26.7",
-    "babel-loader": "^9.2.1",
-    "clean-webpack-plugin": "^4.0.0",
-    "concurrently": "^9.1.2",
-    "copy-webpack-plugin": "^12.0.2",
-    "cross-env": "^7.0.3",
-    "html-webpack-plugin": "^5.6.3",
     "npm-check-updates": "^17.1.14",
     "sass": "^1.84.0",
     "source-map-loader": "^5.0.0",
-    "webpack": "^5.97.1",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0"
-  },
-  "dependencies": {
-    "uuid": "^11.0.5"
+    "vite": "^6.3.5",
+    "vite-plugin-minify": "^2.1.0",
+    "vite-plugin-pwa": "^1.0.0"
   }
 }

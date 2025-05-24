@@ -1,5 +1,11 @@
+import chromatic from "../../assets/chromatic.png";
 import Storage from "./Storage";
 import { getColorCoords } from "../utilis/utilis";
+import {
+  $formModal,
+  $formModalBody,
+  $formModalTitle,
+} from "../modules/elements";
 class UI {
   constructor() {
     this.$notesArea = document.querySelector("#notes-area");
@@ -7,9 +13,9 @@ class UI {
     this.$formTitle = document.querySelector("#form-main #title");
     this.$colorToolTip = document.querySelector(".color-tooltip");
 
-    this.$modal = document.querySelector("#form-modal");
-    this.$modelTitle = document.querySelector("#form-modal #title");
-    this.$modelBody = document.querySelector("#form-modal #body");
+    this.$modal = $formModal;
+    this.$modelTitle = $formModalTitle;
+    this.$modelBody = $formModalBody;
   }
 
   renderNotes() {
@@ -25,7 +31,7 @@ class UI {
                 <div class="card__body">${note.body}</div>
                 <div class="card__options">
                     <div class="card__color">
-                        <img src="img/chromatic.png" alt="color picker">
+                        <img src=${chromatic} alt="color picker">
                     </div>
                     <button class="btn btn-delete">Delete</button>
                 </div>

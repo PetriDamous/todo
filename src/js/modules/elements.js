@@ -1,6 +1,20 @@
 // Form Elements
-export const $title = document.querySelector("#form-main #title");
-export const $body = document.querySelector("#form-main #body");
+export const $formMainTitle = document.querySelector(
+  "#form-main #form-main-title"
+);
+export const $formMainBody = document.querySelector(
+  "#form-main #form-main-body"
+);
+
+export const $formModal = document.querySelector("#form-modal");
+
+export const $formModalTitle = document.querySelector(
+  "#form-modal #form-modal-title"
+);
+
+export const $formModalBody = document.querySelector(
+  "#form-modal #form-modal-body"
+);
 
 // Color tooltip
 export const $colorToolTip = document.querySelector(".color-tooltip");

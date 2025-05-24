@@ -1,0 +1,1 @@
+{"name":"Todo","short_name":"TD","description":"Simple todo list app using vanilla web technologies.","start_url":"/","display":"minimal-ui","background_color":"#434956","theme_color":"#a9afbc","lang":"en","scope":"/","icons":[{"src":"/images/todo.svg","sizes":"any"}]}
