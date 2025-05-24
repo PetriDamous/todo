@@ -18,8 +18,5 @@
     "vite": "^6.3.5",
     "vite-plugin-minify": "^2.1.0",
     "vite-plugin-pwa": "^1.0.0"
-  },
-  "dependencies": {
-    "uuid": "^11.0.5"
   }
 }
