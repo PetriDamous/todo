@@ -87,20 +87,6 @@ class UI {
     this.$colorToolTip.style.display = "none";
   }
 
-  openModal({ dataset: { id } }) {
-    this.closeColor();
-    const notes = Storage.getNotes();
-    const note = notes.find((note) => note.id === id);
-
-    const { title, body } = note;
-
-    this.$modal.dataset.id = id;
-    this.$modelTitle.value = title;
-    this.$modelBody.value = body;
-
-    this.$modal.classList.add("open-modal");
-  }
-
   closeModal() {
     this.$modal.classList.remove("open-modal");
   }

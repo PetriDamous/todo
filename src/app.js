@@ -1,11 +1,11 @@
 import "./sass/style.scss";
 import { setupServiceWorker } from "./js/modules/servicesWorker";
 import { domContentLoaded } from "./js/modules/load";
-import { notes } from "./js/modules/notes";
 import { updateModal } from "./js/modules/updateModal";
 import UI from "./js/classes/UserInterface";
 import CreateNotes from "./js/classes/CreateNotes";
 import Dropdown from "./js/classes/Dropdown";
+import Notes from "./js/classes/Notes";
 import {
   $siteHeaderDropdownButton,
   $siteHeaderDropdownMenu,
@@ -16,6 +16,10 @@ import { siteHeaderActions } from "./js/actions/siteHeaderActions";
 setupServiceWorker();
 
 const uI = new UI();
+
+const notesArea = new Notes();
+
+notesArea.openNote();
 
 const siteHeaderDropdown = new Dropdown({
   dropdownButton: $siteHeaderDropdownButton,
@@ -31,14 +35,7 @@ const createNotes = new CreateNotes(uI);
 createNotes.createNoteAction();
 createNotes.closeForm();
 
-// Keep track of closet color button
-let closetColorBtn;
-
 domContentLoaded();
-
-notes(closetColorBtn);
-
-// createNotesInput();
 
 updateModal();
 

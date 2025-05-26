@@ -37,3 +37,6 @@ export const $siteHeaderDropdownMenu = document.querySelector(
 export const $siteHeaderDropdownOptions = document.querySelectorAll(
   "#site-header-dropdown-menu li"
 );
+
+// Notes\
+export const $notesArea = document.querySelector("#notes-area");

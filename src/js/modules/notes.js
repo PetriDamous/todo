@@ -64,9 +64,5 @@ export const notes = (closetColorBtn) => {
 
       return;
     }
-
-    console.log(elm.closest(".card"));
-
-    uI.openModal(elm.closest(".card"));
   });
 };
