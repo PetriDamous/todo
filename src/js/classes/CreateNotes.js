@@ -36,7 +36,7 @@ class CreateNotes {
         Storage.addNote(note);
         this.uI.clearForm($formMainTitle, $formMainBody);
         this.uI.displayMsg("add", "success");
-        this.uI.renderNotes();
+        note.renderNotes();
         this.createNoteForm.classList.remove("open-modal");
       } else {
         this.uI.displayMsg("validation", "danger");

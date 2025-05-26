@@ -1,9 +1,9 @@
-import UI from "../classes/UserInterface";
+import Notes from "../classes/Notes";
 
 export const domContentLoaded = () => {
-  const uI = new UI();
+  const notesArea = new Notes();
 
   document.addEventListener("DOMContentLoaded", () => {
-    uI.renderNotes();
+    notesArea.renderNotes();
   });
 };

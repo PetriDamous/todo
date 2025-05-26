@@ -6,6 +6,7 @@ import {
   $notesArea,
   $noteUpdateButton,
 } from "../modules/elements";
+import chromatic from "../../assets/chromatic.png";
 import Storage from "./Storage";
 import UI from "./UserInterface";
 
@@ -54,13 +55,33 @@ class Notes {
     this.$modal.classList.remove("open-modal");
   }
 
+  renderNotes() {
+    const notes = Storage.getNotes();
+
+    $notesArea.innerHTML = notes
+      .map(
+        (note) =>
+          `<div class="card" data-color="${note.color}" data-id="${note.id}">
+                <h3 class="card__title">${note.title}</h3>
+                <div class="card__body">${note.body}</div>
+                <div class="card__options">
+                    <div class="card__color">
+                        <img src=${chromatic} alt="color picker">
+                    </div>
+                    <button class="btn btn-delete">Delete</button>
+                </div>
+            </div>`
+      )
+      .join("");
+  }
+
   updateNote() {
     $noteUpdateButton.addEventListener("click", (e) => {
       e.preventDefault();
       Storage.updateNote(e.currentTarget.form.dataset.id);
       this.removeOpenClass();
       this.uI.displayMsg("update", "success");
-      this.uI.renderNotes();
+      this.renderNotes();
     });
   }
 }

@@ -18,28 +18,6 @@ class UI {
     this.$modelBody = $formModalBody;
   }
 
-  renderNotes() {
-    this.closeColor();
-
-    const notes = Storage.getNotes();
-
-    this.$notesArea.innerHTML = notes
-      .map(
-        (note) =>
-          `<div class="card" data-color="${note.color}" data-id="${note.id}">
-                <h3 class="card__title">${note.title}</h3>
-                <div class="card__body">${note.body}</div>
-                <div class="card__options">
-                    <div class="card__color">
-                        <img src=${chromatic} alt="color picker">
-                    </div>
-                    <button class="btn btn-delete">Delete</button>
-                </div>
-            </div>`
-      )
-      .join("");
-  }
-
   displayMsg(action, status) {
     switch (action) {
       case "add":
