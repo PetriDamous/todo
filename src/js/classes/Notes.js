@@ -1,10 +1,13 @@
 import {
+  $closeNoteButton,
   $formModal,
   $formModalBody,
   $formModalTitle,
   $notesArea,
+  $noteUpdateButton,
 } from "../modules/elements";
 import Storage from "./Storage";
+import UI from "./UserInterface";
 
 class Notes {
   constructor(title, body, id = crypto.randomUUID(), color = "default") {
@@ -16,6 +19,14 @@ class Notes {
     this.$modal = $formModal;
     this.$modelTitle = $formModalTitle;
     this.$modelBody = $formModalBody;
+    this.uI = new UI();
+  }
+
+  closeNote() {
+    $closeNoteButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.removeOpenClass();
+    });
   }
 
   openNote() {
@@ -36,6 +47,20 @@ class Notes {
       this.$modelBody.value = body;
 
       this.$modal.classList.add("open-modal");
+    });
+  }
+
+  removeOpenClass() {
+    this.$modal.classList.remove("open-modal");
+  }
+
+  updateNote() {
+    $noteUpdateButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      Storage.updateNote(e.currentTarget.form.dataset.id);
+      this.removeOpenClass();
+      this.uI.displayMsg("update", "success");
+      this.uI.renderNotes();
     });
   }
 }

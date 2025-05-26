@@ -38,5 +38,13 @@ export const $siteHeaderDropdownOptions = document.querySelectorAll(
   "#site-header-dropdown-menu li"
 );
 
-// Notes\
+// Notes
 export const $notesArea = document.querySelector("#notes-area");
+
+export const $noteUpdateButton = document.querySelector(
+  "#form-modal #submit-modal"
+);
+
+export const $closeNoteButton = document.querySelector(
+  "#form-modal #close-modal"
+);

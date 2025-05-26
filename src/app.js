@@ -1,7 +1,6 @@
 import "./sass/style.scss";
 import { setupServiceWorker } from "./js/modules/servicesWorker";
 import { domContentLoaded } from "./js/modules/load";
-import { updateModal } from "./js/modules/updateModal";
 import UI from "./js/classes/UserInterface";
 import CreateNotes from "./js/classes/CreateNotes";
 import Dropdown from "./js/classes/Dropdown";
@@ -20,6 +19,8 @@ const uI = new UI();
 const notesArea = new Notes();
 
 notesArea.openNote();
+notesArea.updateNote();
+notesArea.closeNote();
 
 const siteHeaderDropdown = new Dropdown({
   dropdownButton: $siteHeaderDropdownButton,
@@ -36,8 +37,6 @@ createNotes.createNoteAction();
 createNotes.closeForm();
 
 domContentLoaded();
-
-updateModal();
 
 // window.addEventListener("resize", () => {
 //   getColorCoords(closetColorBtn);

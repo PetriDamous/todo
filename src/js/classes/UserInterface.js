@@ -86,10 +86,6 @@ class UI {
   closeColor() {
     this.$colorToolTip.style.display = "none";
   }
-
-  closeModal() {
-    this.$modal.classList.remove("open-modal");
-  }
 }
 
 export default UI;
