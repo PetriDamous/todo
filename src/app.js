@@ -16,11 +16,12 @@ setupServiceWorker();
 
 const uI = new UI();
 
+// Note area functionality
 const notesArea = new Notes();
-
 notesArea.openNote();
-notesArea.updateNote();
+// notesArea.updateNote();
 notesArea.closeNote();
+// notesArea.deleteNote();
 
 const siteHeaderDropdown = new Dropdown({
   dropdownButton: $siteHeaderDropdownButton,

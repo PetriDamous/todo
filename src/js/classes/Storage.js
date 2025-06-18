@@ -15,7 +15,7 @@ class Storage {
     localStorage.setItem("notes", JSON.stringify(notes));
   }
 
-  static removeNote({ dataset: { id } }) {
+  static removeNote(id) {
     let notes = this.getNotes();
 
     notes = notes.filter((note) => note.id !== id);

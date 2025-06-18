@@ -41,10 +41,10 @@ export const $siteHeaderDropdownOptions = document.querySelectorAll(
 // Notes
 export const $notesArea = document.querySelector("#notes-area");
 
-export const $noteUpdateButton = document.querySelector(
+export const $noteUpdateBtn = document.querySelector(
   "#form-modal #submit-modal"
 );
 
-export const $closeNoteButton = document.querySelector(
-  "#form-modal #close-modal"
-);
+export const $closeNoteBtn = document.querySelector("#form-modal #close-modal");
+
+export const $noteDeleteBtn = document.querySelector("#form-modal #btn-delete");

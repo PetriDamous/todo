@@ -21,7 +21,7 @@ export const esbuildConfig = {
 
 export const vitePWAConfig = {
   devOptions: {
-    enabled: true,
+    enabled: false,
   },
   includeAssets: ["images/*.svg", "images/*.png"],
   injectRegister: "auto",

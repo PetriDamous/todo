@@ -1,10 +1,11 @@
 import {
-  $closeNoteButton,
+  $closeNoteBtn,
   $formModal,
   $formModalBody,
   $formModalTitle,
   $notesArea,
-  $noteUpdateButton,
+  $noteUpdateBtn,
+  $noteDeleteBtn,
 } from "../modules/elements";
 import chromatic from "../../assets/chromatic.png";
 import Storage from "./Storage";
@@ -23,9 +24,21 @@ class Notes {
     this.uI = new UI();
   }
 
+  addOpenClass() {
+    this.$modal.classList.add("open-modal");
+  }
+
   closeNote() {
-    $closeNoteButton.addEventListener("click", (e) => {
+    $closeNoteBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      this.removeOpenClass();
+    });
+  }
+
+  deleteNote() {
+    $noteDeleteBtn.addEventListener("click", (e) => {
+      Storage.removeNote(this.$modal.dataset.id);
+      this.renderNotes();
       this.removeOpenClass();
     });
   }
@@ -47,7 +60,7 @@ class Notes {
       this.$modelTitle.value = title;
       this.$modelBody.value = body;
 
-      this.$modal.classList.add("open-modal");
+      this.addOpenClass();
     });
   }
 
@@ -67,8 +80,7 @@ class Notes {
                 <div class="card__options">
                     <div class="card__color">
                         <img src=${chromatic} alt="color picker">
-                    </div>
-                    <button class="btn btn-delete">Delete</button>
+                    </div>                    
                 </div>
             </div>`
       )
@@ -76,7 +88,7 @@ class Notes {
   }
 
   updateNote() {
-    $noteUpdateButton.addEventListener("click", (e) => {
+    $noteUpdateBtn.addEventListener("click", (e) => {
       e.preventDefault();
       Storage.updateNote(e.currentTarget.form.dataset.id);
       this.removeOpenClass();
